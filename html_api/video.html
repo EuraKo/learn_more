@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/video.css">
+  <title>video api</title>
+</head>
+<body>
+  <h1>html5 api 프로그래밍</h1>
+  <h2>video</h2>
+
+  <p>83p</p>
+  <div id="container">
+    <video id="video" controls>
+      <source src="video/advertiser.mp4">
+    </video>
+
+  <div id="controller">
+    <div id="play">play</div>
+      <input type="range" id="seek" value="0">
+      <div id="current">00:00</div>
+      <button id="mute">mute</button>
+      <input type="range" id="volume" max="1" step="0.1" value="1">
+      <button id="fullScreen">fullScreen</button>
+  </div>
+</div>
+
+<script src="js/video.js"></script>
+
+<!--   <script>
+    var media = document.querySelector("#media");
+    var info = document.querySelector("#info");
+    document.querySelector("#btnPlay").addEventListener("click",function(){
+      media.play();
+    })
+
+    document.addEventListener("timeupdate",function(){
+      info.innerHTML = "상태 : "+media.currentTime + "/"+media.duration;
+    })
+
+  </script> -->
+</body>
+</html>

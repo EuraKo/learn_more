@@ -1,0 +1,21 @@
+.canvas{
+  border:solid #00f thin;
+}
+.css_width{
+  width: 150px;
+  height: 150px;
+}
+
+/*color*/
+.red{
+  color:#f00;
+}
+.blue{
+  color:#00f;
+}
+.green{
+  color:#0f0;
+}
+.orange{
+  color:#f80;
+}

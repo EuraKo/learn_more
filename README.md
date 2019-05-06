@@ -5,3 +5,7 @@
 - 비디오와 오디오에 대한 api
 - [md 바로가기](./md/a_media.md)
 - [예시 바로가기](./html_api/video.html)
+
+### canvas
+- canvas에 대한 api
+- 

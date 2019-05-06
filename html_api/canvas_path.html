@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/canvas.css">
+    <title>path를 활용한 사각형</title>
+</head>
+
+<body>
+    <h1>canvas</h1>
+    <h2>canvas path</h2>
+    <canvas id="canvas" class="canvas" width="450" height="150"></canvas>
+    <h2>canvas arc</h2>
+    <canvas id="canvasArc" class="canvas" width="450" height="150"></canvas>
+    <h3>기본용법</h3>
+    <p>arc(x, y, <span class="red">radius</span>, <span class="blue">startAngle</span>, <span class="green">endAngle</span>, <span class="orange">direction</span>)</p>
+    <ul>
+        <li>x와 y는 중심점의 좌표를 나타낸다.</li>
+        <li><span class="red">radius</span>는 반지름의 길이를 나타낸다.</li>
+        <li><span class="blue">startAngle</span>은 처음 그리기 시작하는 각도이며 수평으로 오른쪽이 0도를 나타낸다.<br /> 각도는 도(degree)를 사용하지 않고 라디언(radian)깂을 사용하으므로 Math.PI를 이용하여 계산한다.<br /> 예를 들어 Math.PI는 180도를 나타내므로 45도를 표현하기 위해서는 Math.PI / 180 * 45와 같이 구할 수 있다.</li>
+        <li><span class="orange">direction</span>은 그리는 방향이며 불리언값을 갖는다.<br /> true는 반시계 방향으로 그리고 false는 시계방향으로 그린다.</li>
+        <li><span class="green">endAngle</span>은 그리기를 종료하는 각도</li>
+    </ul>
+    <h3>주의사항</h3>
+    <ul>
+        <li>새로운 path가 시작될 땐 다시 beginPath()를 써줘야한다.</li>
+    </ul>
+
+    <h2>bezier curve</h2>
+    <canvas id="canvasBezier" class="canvas" width="450" height="150"></canvas>
+    <h3>기본용법</h3>
+    <p><b>2차 베지에 곡선</b> : quadraticCurveTo(cpx, cpy, x, y)</p>
+    <p><b>3차 베지에 곡선</b> : bezierCurveTo(cp1x, cp2y, cp2x, cp2y, x, y)</p>
+    <script src="js/cnavas_path.js"></script>
+</body>
+
+</html>

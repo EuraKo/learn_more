@@ -72,56 +72,115 @@ drawArc();
 var canvasBezier = document.getElementById("canvasBezier");
 var ctxBezier = canvasBezier.getContext("2d");
 
-function speechBaloon(){
-  ctxBezier.beginPath();
-  ctxBezier.moveTo(75,25);
-  ctxBezier.quadraticCurveTo(25,25,25,62.5);
-  ctxBezier.quadraticCurveTo(25,100,50,100);
-  ctxBezier.quadraticCurveTo(50,120,30,125);
-  ctxBezier.quadraticCurveTo(60,120,65,100);
-  ctxBezier.quadraticCurveTo(125,100,125,62.5);
-  ctxBezier.quadraticCurveTo(125,25,75,25);
-  ctxBezier.stroke();
+function speechBaloon() {
+    ctxBezier.beginPath();
+    ctxBezier.moveTo(75, 25);
+    ctxBezier.quadraticCurveTo(25, 25, 25, 62.5);
+    ctxBezier.quadraticCurveTo(25, 100, 50, 100);
+    ctxBezier.quadraticCurveTo(50, 120, 30, 125);
+    ctxBezier.quadraticCurveTo(60, 120, 65, 100);
+    ctxBezier.quadraticCurveTo(125, 100, 125, 62.5);
+    ctxBezier.quadraticCurveTo(125, 25, 75, 25);
+    ctxBezier.stroke();
 }
 
-function heart(){
-  ctxBezier.beginPath();
-  ctxBezier.moveTo(275,40);
-  ctxBezier.bezierCurveTo(275,37,270,25,250,25);
-  ctxBezier.bezierCurveTo(220,25,220,62.5,220,62.5);
-  ctxBezier.bezierCurveTo(220,80,240,102,275,120);
-  ctxBezier.bezierCurveTo(310,102,330,80,330,62.5);
-  ctxBezier.bezierCurveTo(330,62.5,330,25,300,25);
-  ctxBezier.bezierCurveTo(285,25,275,37,275,40);
-  ctxBezier.fill();
+function heart() {
+    ctxBezier.beginPath();
+    ctxBezier.moveTo(275, 40);
+    ctxBezier.bezierCurveTo(275, 37, 270, 25, 250, 25);
+    ctxBezier.bezierCurveTo(220, 25, 220, 62.5, 220, 62.5);
+    ctxBezier.bezierCurveTo(220, 80, 240, 102, 275, 120);
+    ctxBezier.bezierCurveTo(310, 102, 330, 80, 330, 62.5);
+    ctxBezier.bezierCurveTo(330, 62.5, 330, 25, 300, 25);
+    ctxBezier.bezierCurveTo(285, 25, 275, 37, 275, 40);
+    ctxBezier.fill();
 }
 speechBaloon();
 heart();
 
+// ==========================
+
+// 색상 스타일
+
+var canvasColor = document.getElementById("canvasColor");
+var ctxColor = canvasColor.getContext("2d");
+var rectWidth = 15;
+
+function drawFillColorRect() {
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+
+            // Math.floor함수는 실수값의 소수점이하를 버리고 정수로 치환해줌
+            ctxColor.fillStyle = 'rgba(' + Math.floor(255 - 25.5 * i) + ',' + Math.floor(255 - 25.5 * j) + ',0,' + i / 10.0 + ')';
+            ctxColor.fillRect(j * rectWidth, i * rectWidth, rectWidth,
+                rectWidth);
+        }
+    }
+}
+
+function drawStrokeColorRect() {
+    for (var i = 0; i < 10; i++) {
+        for (var j = 0; j < 10; j++) {
+            ctxColor.strokeStyle = "rgb(" + Math.floor(255 - 25.5 * i) + "," + Math.floor(255 - 25.5 * j) + ",0)";
+            ctxColor.strokeRect(300 + j * rectWidth, i * rectWidth, rectWidth, rectWidth);
+        }
+    }
+}
+
+drawFillColorRect();
+drawStrokeColorRect();
 
 
+// =====================================
 
+// 선의 스타일
+var canvasLine = document.getElementById("canvasLine");
+var ctxLine = canvasLine.getContext("2d");
 
+// 라인그리기
+function drawLine() {
+    for (var i = 0; i < 10; i++) {
+        ctxLine.beginPath();
+        ctxLine.lineWidth = 1 + i;
+        ctxLine.moveTo(5, 5 + 15 * i);
+        ctxLine.lineTo(145, 5 + 15 * i);
+        ctxLine.stroke();
+    }
+}
 
+// 캡모양
+var caps = ["buff", "round", "square"];
 
+function drawCap() {
 
+    ctxLine.fillStyle = "#add";
+    ctxLine.fillRect(250, 20, 110, 110);
+    ctxLine.lineWidth = 15;
+    for (var i = 0; i < caps.length; i++) {
+        ctxLine.beginPath();
+        ctxLine.lineCap = caps[i];
+        ctxLine.moveTo(250, 50 + 30 * i);
+        ctxLine.lineTo(360, 50 + 30 * i);
+        ctxLine.stroke();
+    }
 
+}
 
+// 모서리 모양
+var join = ["round", "bevel", "miter"];
 
+function drawJoin() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ctxLine.lineWidth = 20;
+    for (var i = 0; i < join.length; i++) {
+        ctxLine.beginPath();
+        ctxLine.lineJoin = join[i];
+        ctxLine.moveTo(450 + 30 * i, 10);
+        ctxLine.lineTo(450 + 30 * i, 135 - 30 * i);
+        ctxLine.lineTo(580, 135 - 30 * i);
+        ctxLine.stroke();
+    }
+}
+drawLine();
+drawCap();
+drawJoin();

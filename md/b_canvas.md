@@ -27,3 +27,26 @@
 - **arc(x,y,radius,startAngle,endAngle,direction)** : 좌표에 radius 만큼의 반지름으로 startAngle에서 endAngle까지 원호를 direction 방향으로 그린다.각도는 수평이 0도이다.
 - **quadraticCurveTo(cpx,cpy,x,y)** : 현재 위치에서 (x,y)까지 (cpx,cpy)를 제어점으로 사용하는 2차 베지어 곡선을 그린다.
 - **bezierCurveTo(cpx1, cpy1, cpx2, cpy2, x, y)** : 현재 위치에서 (x,y)까지 (cpx1,cpy1)을 1차 제어점으로 (cpx2,cpy2)를 2차 제어점으로 사용하는 3차 베지어 곡선을 그린다
+
+#### 색상관련 속성
+''를 달아 문자열로 만들어야 한다
+
+- **fillStyle** : 색채우기
+- **strokeStyle** : 테두리색
+- **globalAlpha** : 캔버스의 모든 도형의 투명도를 0.0~1.0의 값으로 지정
+
+#### 크기관련 함수
+- **fillRect(x,y,width,height)** : 안이 찬 네모
+- **strokeRect(x,y,width,height)** : 네모 테두리 
+
+#### 선의 스타일 관련 속성
+- **lineWidth** : 선의 두께, 기본값은 1.0
+- **lineCap** : 선의 끝부분 형태
+- **lineJoin** : 두선이 겹치는 부분의 형태
+- **lineDashOffset** : 대시화살표가 선에서 시작하는 위치
+
+#### 선의 스타일 관련 함수
+- **getLinDash()** : 현재 선에 설정된 대시의 스타일 반환
+- **geLineDash(dash style)** : 현재 선의 특정 스타일의 대시 스타일 적용
+
+> 참고 서적 : HTML5 API 프로그래밍 조용준저

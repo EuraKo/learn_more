@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/storage.css">
+  <title>starage 사용가능확인</title>
+</head>
+<body>
+  
+
+<script>
+  function checkWebStorageAvaliable(){
+    try{
+      if(localStorage){
+        localStorage.setItem("test","test-value");
+        localStorage.removeItem("test");
+      }else{
+        return "브라우저에서 localStorage 지원하지 않음";
+      }
+    }catch(exception){
+      return exception + "발생으로 localStorage 사용불가";
+    }
+  }
+
+  var msg = checkWebStorageAvaliable();
+  if(msg){
+    document.write(msg);
+  }else{
+    document.write("localStorage를 사용하는 작업 진행");
+  }
+
+</script>
+  <script src="js/stotage.js"></script>
+</body>
+</html>

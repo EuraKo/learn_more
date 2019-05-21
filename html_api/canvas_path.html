@@ -31,42 +31,70 @@
     <h3>기본용법</h3>
     <p><b>2차 베지에 곡선</b> : quadraticCurveTo(cpx, cpy, x, y)</p>
     <p><b>3차 베지에 곡선</b> : bezierCurveTo(cp1x, cp2y, cp2x, cp2y, x, y)</p>
-
     <h2>색상</h2>
     <canvas id="canvasColor" class="canvas" width="450" height="150"></canvas>
-<h3>기본용법</h3>
-<ul>
-  <li>ctx.<b>fillStyle</b> = "#aaa"</li>
-  <li>ctx.<b>strokeStyle</b> = "rgba(0,0,0,0.5)"</li>
-  <li>ctx.<b>globalAlpha</b> = 0.2</li>
-</ul>
-<ul>
-  <li>ctx.<b>fillRect</b>(x, y, width, height)</li>
-  <li>ctx.<b>StrokeRect</b>(x, y, width, height)</li>
-</ul>
-<h3>주의사항</h3>
-<ul>
-  <li>fillStyle과 strokeStyle을 같이 쓰면 fillStyle이 위로올라와 stroke이 안보인다.</li>
-</ul>
+    <h3>기본용법</h3>
+    <ul>
+        <li>ctx.<b>fillStyle</b> = "#aaa"</li>
+        <li>ctx.<b>strokeStyle</b> = "rgba(0,0,0,0.5)"</li>
+        <li>ctx.<b>globalAlpha</b> = 0.2</li>
+    </ul>
+    <ul>
+        <li>ctx.<b>fillRect</b>(x, y, width, height)</li>
+        <li>ctx.<b>StrokeRect</b>(x, y, width, height)</li>
+    </ul>
+    <h3>주의사항</h3>
+    <ul>
+        <li>fillStyle과 strokeStyle을 같이 쓰면 fillStyle이 위로올라와 stroke이 안보인다.</li>
+    </ul>
+    <h2>선의 스타일</h2>
+    <canvas id="canvasLine" class="canvas" width="900" height="150"></canvas>
+    <h3>기본용법</h3>
+    <ol>
+        <li><b>lineWidth</b> : 선의 두께, 기본값 1.0 / lineWidth = 20</li>
+        <li><b>lineCap</b> : 속성 "buff", "round", "square" / lineCap = "round"</li>
+        <li><b>lineJoin</b> : 속성 "round", "bevel", "miter" / lineJoin = "round"</li>
+        <li><b>lineDashOffset</b> : 선의 시작점을 변경</li>
+    </ol>
+    <ul>
+        <li><b>getLinDash()</b> : setLineDash의 값을 반환해온다</li>
+        <li><b>setLineDash(dash style)</b> : setLineDash([선의 길이, 선의 간격])</li>
+    </ul>
+    <h2>그라디언트</h2>
+    <canvas id="canvasGradient" class="canvas" width="450" height="150"></canvas>
+    <h3>기본용법</h3>
+    <ul>
+        <li>createLinearGradient(x1, y1, x2, y2)</li>
+        <li>createRadialGradient(x1, y1, r1, x2, y2, r2)</li>
+        <li>gradient.addColorStop(position, color)</li>
+    </ul>
+    <h2>패턴</h2>
+    <canvas id="canvasPattern" classs="canvas" width="450" height="150"></canvas>
+    <h3>기본용법</h3>
+    <p>createPattern(<span class="red">image</span>, <span class="blue">type</span>)</p>
+    <ul>
+        <li><span class="red">image</span> : 이미지 소스</li>
+        <li><span class="blue">type</span> : 반복할 방식 
+          <ul>
+                <li>repeat</li>
+                <li>repeat-x</li>
+                <li>repeat-y</li>
+                <li>no-repeat</li>
+            </ul>
+        </li>
+    </ul>
 
-<h2>선의 스타일</h2>
-<canvas id="canvasLine" class="canvas" width="900" height="150"></canvas>
-<h3>기본용법</h3>
-<ol>
-  <li><b>lineWidth</b> : 선의 두께, 기본값 1.0 / lineWidth = 20</li>
-  <li><b>lineCap</b> : 속성 "buff", "round", "square" / lineCap = "round"</li>
-  <li><b>lineJoin</b> : 속성 "round", "bevel", "miter" / lineJoin = "round"</li>
-  <li><b>lineDashOffset</b></li>
-</ol>
-<ul>
-  <li>getLinDash()</li>
-  <li>geLineDash(dash style)</li>
-</ul>
+  <h2>그림자</h2>
+  <canvas id="canvasShadow" class="canvas" width="450" height="150"></canvas>
+  <h3>기본용법</h3>
+  <ul>
+    <li><b>shadowOffsetX</b> : x축 거리</li>
+    <li><b>shadowOffsetY</b> : Y축 거리</li>
+    <li><b>shadowBlur</b> : 번짐 정도</li>
+    <li><b>shadowColor</b> : 색상</li>
+  </ul>
 
-
-
-
-
+<p>to be countinue.................</p>
 
 
 
@@ -77,19 +105,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

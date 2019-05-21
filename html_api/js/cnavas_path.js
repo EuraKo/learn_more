@@ -181,6 +181,85 @@ function drawJoin() {
         ctxLine.stroke();
     }
 }
+
+function drawDash(){
+
+ ctxLine.setLineDash([ 1, 30 ]);
+    ctxLine.lineDashOffset = 20;
+    ctxLine.strokeRect(700, 10, 150, 130);
+    console.log(ctxLine.getLineDash());
+}
 drawLine();
 drawCap();
 drawJoin();
+drawDash();
+
+
+// ============================
+
+// gradient
+
+ var canvasGradent = document.getElementById("canvasGradient");
+ var ctxGradient = canvasGradent.getContext("2d");
+
+ function drawGradient(){
+  var lingrad = ctxGradient.createLinearGradient(0,0,450,0);
+  lingrad.addColorStop(0,'rgb(255,0,0)');
+  lingrad.addColorStop(0.3,'rgb(0,255,0)');
+  lingrad.addColorStop(0.7,'rgb(0,0,255)');
+  lingrad.addColorStop(1,'rgb(255,255,255)');
+  ctxGradient.fillStyle = lingrad;
+  ctxGradient.fillRect(0,0,450,150);
+ }
+
+drawGradient();
+
+
+// ==========================
+
+// pattern
+
+var canvasPattern = document.getElementById("canvasPattern");
+var ctxPattern = canvasPattern.getContext("2d");
+
+function drawPattern () {
+  // Image()는 대문자여야만 한다.
+  var img = new Image();
+  console.log(img);
+  img.src ="../img/mom_bg.jpg";
+
+  img.addEventListener("load",function(){
+    var pattern = ctxPattern.createPattern(this, "repeat");
+    ctxPattern.fillStyle = pattern;
+    ctxPattern.fillRect(0,0,450,150);
+  })
+}
+
+drawPattern();
+
+
+// ==========================
+
+// shadow
+
+var canvasShadow = document.getElementById("canvasShadow");
+var ctxShadow = canvasShadow.getContext("2d");
+
+function drawShadow (){
+  ctxShadow.shadowOffsetX = 10;
+  ctxShadow.shadowOffsetY = 10;
+  ctxShadow.shadowBlur = 10;
+  ctxShadow.shadowColor = "rgba(255,0,0,1)";
+  ctxShadow.fillRect(20,20,410,110);
+}
+
+drawShadow();
+
+
+
+
+
+
+
+
+

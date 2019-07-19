@@ -727,6 +727,27 @@ scene.add(pointLight);
 
 ---
 
+## 4장 메시
+
+### THREE.MeshBasicMaterial
+
+> 04_01_mesh_basic.html
+
+- 단순 평면 폴리곤 와이어 프레임 옵션이있음
+- **new THREE.MeshBasicMaterial({ color: 0x777777,wireframe:true })**
+- opacity를 사용하려면 transparent가 true여야한다
+- side : 장면결정을 한다 (plane으로 테스트) double은 양면을 보여주는 성능에 영향을 미친다.
+
+---
+
+### 버전 106 에서는?
+
+- webGLRenderer.setClearColor(new THREE.Color(0xffffff,1.0))쓰면 노란색나옴
+- scene.background = new THREE.Color(0xffffff); < 이게 실질적인 배경색을 정한다.
+- 
+
+---
+
 ## Math 함수
 
 ### Math.PI
